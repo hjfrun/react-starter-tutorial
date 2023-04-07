@@ -2,33 +2,40 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [value, setValue] = useState(0)
-  const [secondValue, setSecondValue] = useState(0)
-  const sayHello = () => {
-    console.log('Hello there')
-  }
+  const url = 'https://api.github.com/users'
 
-  sayHello()
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
-    console.log('Hello from first useEffect')
-  }, [value])
-
-  useEffect(() => {
-    console.log('Hello from second useEffect')
-  }, [secondValue])
-
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url)
+        const users = await response.json()
+        setUsers(users)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
   return (
-    <div>
-      <h1>value: {value}</h1>
-      <button className='btn' onClick={() => setValue(value + 1)}>
-        Click Me
-      </button>
-      <h1>second value: {secondValue}</h1>
-      <button className='btn' onClick={() => setSecondValue(secondValue + 1)}>
-        second value
-      </button>
-    </div>
+    <section>
+      <h3>github users</h3>
+      <ul className='users'>
+        {users.map(user => {
+          const { id, login, avatar_url, html_url } = user
+          return (
+            <li key={id}>
+              <img src={avatar_url} alt={login} />
+              <div>
+                <h5>{login}</h5>
+                <a href={html_url}>Profile</a>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
   )
 }
 
