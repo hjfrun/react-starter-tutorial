@@ -1,4 +1,4 @@
-import Content from './tutorial/03-cleanup-functions'
+import Content from './tutorial/04-multiple-returns'
 
 function App() {
   return (
