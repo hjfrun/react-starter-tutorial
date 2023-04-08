@@ -1,4 +1,4 @@
-import Content from './tutorial/06-hook-rules'
+import Content from './tutorial/07-toggle-challenge'
 
 function App() {
   return (
