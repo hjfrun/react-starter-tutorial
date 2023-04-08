@@ -1,4 +1,4 @@
-import Content from './tutorial/04-multiple-returns'
+import Content from './tutorial/05-multiple-returns-fetch-data'
 
 function App() {
   return (
