@@ -1,5 +1,5 @@
-import Example from './tutorial/09-project-structure/Example'
-import Navbar from './tutorial/09-project-structure/NavBar'
+import Example from './tutorial/d09-project-structure/Example'
+import Navbar from './tutorial/d09-project-structure/NavBar'
 
 function App() {
   return (
