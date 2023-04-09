@@ -1,11 +1,9 @@
-import Example from './tutorial/d01-project-structure/Example'
-import Navbar from './tutorial/d01-project-structure/NavBar'
+import List from './d-tutorial/02-leverage-javascript/List'
 
 function App() {
   return (
     <div className='container'>
-      <Navbar />
-      <Example />
+      <List />
     </div>
   )
 }
